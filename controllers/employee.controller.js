@@ -1,4 +1,6 @@
 const Employee = require('../models/employee.model');
+/* Se define una constante sobre la cual se implementará los diferentes
+  métodos que seran usados para manipular los datos. */
 const employeeCtrl = {};
 
 employeeCtrl.createEmployee = async (req, res) => {
@@ -34,4 +36,6 @@ employeeCtrl.deleteEmployee = async (req, res) => {
   res.json({ status: 'Employee deleted' });
 };
  
+/* Éste modulo nos permite exportar la constante que permite la manipulación
+  de datos */
 module.exports = employeeCtrl;

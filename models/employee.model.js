@@ -1,4 +1,5 @@
 const mongoose =  require('mongoose');
+// Ésto nos permite modelar los datos dentro del servidor
 const { Schema } = mongoose;
 
 const EmployeeSchema = new Schema({
@@ -8,4 +9,5 @@ const EmployeeSchema = new Schema({
   salary: { type: Number, required: true}
 });
 
+// Ésto nos permite exportar el modelo de datos a almacenar
 module.exports = mongoose.model('Employee', EmployeeSchema);
