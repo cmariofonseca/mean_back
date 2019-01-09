@@ -1,13 +1,13 @@
 {
-  "name": "back",
+  "name": "mean",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server/index.js"
+    "start": "nodemon src/index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "cmariofonseca",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",

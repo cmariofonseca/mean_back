@@ -10,25 +10,25 @@
 **/
 
 const express = require('express');
+const app = express();
 const morgan = require('morgan');
 const cors = require('cors');
-const app = express();
 const { mongoose } = require('./database');
 
 // Settings
 app.set('port', process.env.PORT || 3000);
-
-// Middlewares
-// Ésta propiedad define formato de vista de información por consola.
-app.use(morgan('dev'));
-// Ésta propiedad permite la lectura de los datos que llegan en formato Json.
-app.use(express.json());
-app.use(cors({ origin: 'http://localhost:4200' }));
-
-// Routes
-app.use('/api/employees', require('./routes/employee.route'));
-
 // Starting the server
 app.listen(app.get('port'), () => {
   console.log('Server on port', app.get('port'));
 });
+
+// Middlewares
+// Ésta propiedad define formato de vista de información por consola.
+app.use(morgan('dev'));
+// Ésta propiedad permite la lectura de los datos que llegan en formato Json, a través de req.body
+app.use(express.json());
+// 
+app.use(cors({ origin: 'http://localhost:4200' }));
+
+// Routes
+app.use('/api/employees', require('./routes/employee.route'));
